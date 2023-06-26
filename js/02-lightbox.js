@@ -19,18 +19,9 @@ function createMarkup(arr) {
 
 gallery.insertAdjacentHTML("beforeend", createMarkup(galleryItems));
 
-gallery.addEventListener("click", handlerClick);
+var lightbox = new SimpleLightbox(".gallery a", { 
+  captionsData: "alt", 
+  captionDelay: 250 
+});
 
-function handlerClick(evt) {
-  evt.preventDefault();
 
-  if (evt.target === evt.currentTarget) {
-    return;
-  }
-
-  var lightbox = new SimpleLightbox(".gallery a", { 
-        captionsData: "alt", 
-        captionDelay: 250 
-    });
-
-}
